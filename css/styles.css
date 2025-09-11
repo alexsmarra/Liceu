@@ -40,6 +40,7 @@ header {
     font-weight: bold;
     text-decoration: none;
     transition: color 0.3s;
+    cursor: pointer;
 }
 
 .logo a:hover {
@@ -50,6 +51,11 @@ header {
     height: 48px;      /* Ou o tamanho que preferir */
     width: auto;       /* Mantém proporção */
     display: block;    /* Remove espaço extra abaixo da imagem */
+}
+
+.logo a,
+.logo img {
+    cursor: pointer;
 }
 
 /* Navegação - Menu à direita */
