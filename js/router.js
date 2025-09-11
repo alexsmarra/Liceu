@@ -36,17 +36,21 @@ class Router {
     async loadRoute() {
         const path = window.location.hash.slice(1) || 'home';
         const template = this.routes[path];
-        
+        const main = document.querySelector('main');
+
+        // Adiciona ou remove a classe fill-screen conforme a rota
         if (path === 'home') {
-            // Dentro do loadRoute(), após a verificação do path === 'home':
-          if (template === null) {
-              document.getElementById('content').innerHTML = this.homeContent;
-              this.initCarousel();
-              this.updateActiveLink('home');
-              return;
-          }
+            main.classList.remove('fill-screen');
+            if (template === null) {
+                document.getElementById('content').innerHTML = this.homeContent;
+                this.initCarousel();
+                this.updateActiveLink('home');
+                return;
+            }
+        } else {
+            main.classList.add('fill-screen');
         }
-        
+
         if (template) {
             try {
                 const response = await fetch(template);
@@ -55,7 +59,7 @@ class Router {
                 }
                 const content = await response.text();
                 document.getElementById('content').innerHTML = content;
-                
+
                 // Atualizar navegação
                 this.updateActiveLink(path);
             } catch (error) {
