@@ -4,210 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Igreja - Página Inicial</title>
-    <style>
-        /* Reset e estilos base */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        /* Header com imagem de fundo */
-        header {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                       url('images/a.jpeg') no-repeat center center;
-            background-size: cover;
-            height: 60vh;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 2rem;
-        }
-        
-        .logo {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
-        
-        .slogan {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin-bottom: 2rem;
-        }
-        
-        /* Navegação */
-        nav {
-            background-color: #2c3e50;
-            padding: 1rem 0;
-        }
-        
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-        }
-        
-        nav li {
-            margin: 0 1.5rem;
-        }
-        
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        nav a:hover {
-            color: #3498db;
-        }
-        
-        /* Carrossel */
-        .carousel-container {
-            max-width: 1000px;
-            margin: 3rem auto;
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .carousel {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-        
-        .carousel-item {
-            min-width: 100%;
-            height: 400px;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .carousel-item:nth-child(1) {
-            background-image: url('images/b.jpeg');
-        }
-        
-        .carousel-item:nth-child(2) {
-            background-image: url('images/c.jpg');
-        }
-        
-        .carousel-item:nth-child(3) {
-            background-image: url('https://placehold.co/1000x400/2ecc71/ffffff?text=Eventos+Igreja');
-        }
-        
-        .carousel-controls {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-        }
-        
-        .carousel-btn {
-            background: rgba(255, 255, 255, 0.7);
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            cursor: pointer;
-            margin: 0 1rem;
-            transition: background 0.3s;
-        }
-        
-        .carousel-btn:hover {
-            background: rgba(255, 255, 255, 0.9);
-        }
-        
-        .carousel-indicators {
-            position: absolute;
-            bottom: 15px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-        
-        .indicator {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        
-        .indicator.active {
-            background: rgba(255, 255, 255, 1);
-        }
-        
-        /* Conteúdo */
-        .content {
-            max-width: 1000px;
-            margin: 3rem auto;
-            padding: 0 2rem;
-            text-align: center;
-        }
-        
-        .content h2 {
-            color: #2c3e50;
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-        }
-        
-        .content p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            color: #555;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
-        
-        /* Responsividade */
-        @media (max-width: 768px) {
-            header {
-                height: 50vh;
-                padding: 1rem;
-            }
-            
-            .logo {
-                font-size: 2rem;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            nav li {
-                margin: 0.5rem 0;
-            }
-            
-            .carousel-item {
-                height: 300px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
@@ -217,95 +14,49 @@
     
     <nav>
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#ministerios">Ministérios</a></li>
-            <li><a href="#eventos">Eventos</a></li>
-            <li><a href="#contato">Contato</a></li>
+            <li><a href="#home" data-page="home">Home</a></li>
+            <li><a href="#sobre" data-page="sobre">Sobre</a></li>
+            <li><a href="#ministerios" data-page="ministerios">Ministérios</a></li>
+            <li><a href="#eventos" data-page="eventos">Eventos</a></li>
+            <li><a href="#contato" data-page="contato">Contato</a></li>
+            <li><a href="#devocionais" data-page="devocionais">Devocionais</a></li>
         </ul>
     </nav>
     
-    <div class="carousel-container">
-        <div class="carousel">
-            <div class="carousel-item"></div>
-            <div class="carousel-item"></div>
-            <div class="carousel-item"></div>
+    <main id="content">
+        <!-- Conteúdo será carregado aqui via JavaScript -->
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-item"></div>
+                <div class="carousel-item"></div>
+                <div class="carousel-item"></div>
+            </div>
+            
+            <div class="carousel-controls">
+                <button class="carousel-btn prev-btn">&#10094;</button>
+                <button class="carousel-btn next-btn">&#10095;</button>
+            </div>
+            
+            <div class="carousel-indicators">
+                <div class="indicator active" data-index="0"></div>
+                <div class="indicator" data-index="1"></div>
+                <div class="indicator" data-index="2"></div>
+            </div>
         </div>
         
-        <div class="carousel-controls">
-            <button class="carousel-btn prev-btn">&#10094;</button>
-            <button class="carousel-btn next-btn">&#10095;</button>
-        </div>
-        
-        <div class="carousel-indicators">
-            <div class="indicator active" data-index="0"></div>
-            <div class="indicator" data-index="1"></div>
-            <div class="indicator" data-index="2"></div>
-        </div>
-    </div>
-    
-    <section class="content">
-        <h2>Bem-vindo à nossa igreja</h2>
-        <p>Somos uma comunidade cristã dedicada a servir a Deus e às pessoas. Nossa missão é espalhar o amor de Cristo através de ações e palavras.</p>
-        <p>Junte-se a nós em nossos cultos de adoração, grupos de estudo bíblico e eventos comunitários.</p>
-    </section>
+        <section class="content">
+            <h2>Bem-vindo à nossa igreja</h2>
+            <p>Somos uma comunidade cristã dedicada a servir a Deus e às pessoas. Nossa missão é espalhar o amor de Cristo através de ações e palavras.</p>
+            <p>Junte-se a nós em nossos cultos de adoração, grupos de estudo bíblico e eventos comunitários.</p>
+        </section>
+    </main>
     
     <footer>
         <p>Igreja Nova Vida &copy; 2023 - Todos os direitos reservados</p>
         <p>Endereço: Rua da Esperança, 123 - Cidade da Fé</p>
     </footer>
 
-    <script>
-        // Configuração do carrossel
-        document.addEventListener('DOMContentLoaded', function() {
-            const carousel = document.querySelector('.carousel');
-            const items = document.querySelectorAll('.carousel-item');
-            const prevBtn = document.querySelector('.prev-btn');
-            const nextBtn = document.querySelector('.next-btn');
-            const indicators = document.querySelectorAll('.indicator');
-            
-            let currentIndex = 0;
-            const totalItems = items.length;
-            
-            // Função para atualizar o carrossel
-            function updateCarousel() {
-                carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-                
-                // Atualizar indicadores
-                indicators.forEach((indicator, index) => {
-                    if (index === currentIndex) {
-                        indicator.classList.add('active');
-                    } else {
-                        indicator.classList.remove('active');
-                    }
-                });
-            }
-            
-            // Event listeners para os botões
-            nextBtn.addEventListener('click', function() {
-                currentIndex = (currentIndex + 1) % totalItems;
-                updateCarousel();
-            });
-            
-            prevBtn.addEventListener('click', function() {
-                currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-                updateCarousel();
-            });
-            
-            // Event listeners para os indicadores
-            indicators.forEach(indicator => {
-                indicator.addEventListener('click', function() {
-                    currentIndex = parseInt(this.getAttribute('data-index'));
-                    updateCarousel();
-                });
-            });
-            
-            // Auto-avanço do carrossel a cada 5 segundos
-            setInterval(function() {
-                currentIndex = (currentIndex + 1) % totalItems;
-                updateCarousel();
-            }, 5000);
-        });
-    </script>
+    <script src="js/router.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

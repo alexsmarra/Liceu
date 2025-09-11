@@ -1,0 +1,16 @@
+{
+  "name": "igreja-project",
+  "version": "1.0.0",
+  "description": "Site para Comunidade Cristã Liceu",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server",
+    "dev": "lite-server"
+  },
+  "keywords": ["igreja", "site", "spa"],
+  "author": "Seu Nome",
+  "license": "ISC",
+  "dependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
