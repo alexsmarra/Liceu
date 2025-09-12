@@ -10,10 +10,9 @@ class Router {
         // Definir rotas
         this.addRoute('home', null);
         this.addRoute('sobre', 'pages/sobre.html');
-        this.addRoute('ministerios', 'pages/ministerios.html');
-        this.addRoute('eventos', 'pages/eventos.html');
+        this.addRoute('horarios', 'pages/horarios.html');
+        this.addRoute('aulas-online', 'pages/aulas-online.html');
         this.addRoute('contato', 'pages/contato.html');
-        this.addRoute('devocionais', 'pages/devocionais.html');
 
         // Configurar event listeners
         window.addEventListener('hashchange', () => this.loadRoute());
@@ -94,10 +93,8 @@ class Router {
         });
     }
 
+    // ...existing code...
     initCarousel() {
-        const carousel = document.querySelector('.carousel');
-        if (!carousel) return;
-
         const items = document.querySelectorAll('.carousel-item');
         const prevBtn = document.querySelector('.prev-btn');
         const nextBtn = document.querySelector('.next-btn');
@@ -106,51 +103,48 @@ class Router {
         let currentIndex = 0;
         const totalItems = items.length;
 
-        // Função para atualizar o carrossel
-        function updateCarousel() {
-            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-            // Atualizar indicadores
-            indicators.forEach((indicator, index) => {
-                if (index === currentIndex) {
-                    indicator.classList.add('active');
-                } else {
-                    indicator.classList.remove('active');
-                }
+        function showItem(index) {
+            items.forEach((item, i) => {
+                // AQUI ESTÁ A ALTERAÇÃO PRINCIPAL
+                item.classList.toggle('active', i === index);
+            });
+            indicators.forEach((indicator, i) => {
+                indicator.classList.toggle('active', i === index);
             });
         }
 
-        // Event listeners para os botões
         if (prevBtn) {
             prevBtn.addEventListener('click', function () {
                 currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-                updateCarousel();
+                showItem(currentIndex);
             });
         }
 
         if (nextBtn) {
             nextBtn.addEventListener('click', function () {
                 currentIndex = (currentIndex + 1) % totalItems;
-                updateCarousel();
+                showItem(currentIndex);
             });
         }
 
-        // Event listeners para os indicadores
-        if (indicators.length > 0) {
-            indicators.forEach(indicator => {
-                indicator.addEventListener('click', function () {
-                    currentIndex = parseInt(this.getAttribute('data-index'));
-                    updateCarousel();
-                });
+        indicators.forEach((indicator, i) => {
+            indicator.addEventListener('click', function () {
+                currentIndex = i;
+                showItem(currentIndex);
             });
-        }
+        });
 
         // Auto-avanço do carrossel a cada 5 segundos
-        setInterval(function () {
+        if (this.carouselInterval) clearInterval(this.carouselInterval);
+        this.carouselInterval = setInterval(function () {
             currentIndex = (currentIndex + 1) % totalItems;
-            updateCarousel();
+            showItem(currentIndex);
         }, 5000);
+
+        // Inicia o carrossel mostrando o primeiro item
+        showItem(currentIndex);
     }
+    // ...existing code...
 }
 
 // Inicializar o router

@@ -106,8 +106,8 @@ main.fill-screen .page-content {
 
 /* Carrossel - ALTURA AUMENTADA EM 1/4 E LARGURA REDUZIDA EM 1/4 */
 .carousel-container {
-    height: 750px; /* Aumento de 1/4 (600px + 150px) */
-    max-width: 750px; /* Redução de 1/4 (1000px - 250px) */
+    height: 750px;
+    max-width: 750px;
     margin: 3rem auto;
     position: relative;
     overflow: hidden;
@@ -115,32 +115,45 @@ main.fill-screen .page-content {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.carousel {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    height: 100%; /* Ocupa 100% da altura do container */
-}
-
 .carousel-item {
     min-width: 100%;
-    height: 100%; /* Agora ocupa 100% da altura do container */
-    background-size: cover; /* Garante que a imagem cubra toda a área */
-    background-position: center center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita repetição */
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+    /* === ALTERAÇÃO PRINCIPAL AQUI === */
+    /* Posiciona todos os itens no mesmo lugar */
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    /* Configura o estado inicial: invisível e transparente */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.2s ease-in-out, visibility 1.2s ease-in-out;
+}
+
+.carousel-item.active {
+    /* === ALTERAÇÃO PRINCIPAL AQUI === */
+    /* Mostra o item ativo com opacidade total */
+    opacity: 1;
+    visibility: visible;
 }
 
 .carousel-item:nth-child(1) {
-    background-image: url('../images/b.jpeg');
+    background-image: url('../images/c.jpeg');
 }
 
 .carousel-item:nth-child(2) {
-    background-image: url('../images/c.jpeg');
+    background-image: url('../images/d.jpeg');
 }
 
 .carousel-item:nth-child(3) {
     background-image: url('../images/f.jpg');
-    /* Alterado para 750x750 para manter proporção quadrada */
 }
+
+/* O restante do código do carrossel não precisa ser alterado */
 
 .carousel-controls {
     position: absolute;
