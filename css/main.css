@@ -23,7 +23,7 @@ body {
 
 /* HEADER REDESIGN - Mais fino com logo e menu horizontal */
 header {
-    background-color: #2c3e50; /* Cor sólida em vez de imagem */
+    background-color: var(--primary-color); /* Cor sólida em vez de imagem */
     padding: 0.8rem 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
@@ -50,7 +50,8 @@ header {
 }
 
 .logo a:hover {
-    color: #3498db;
+    /* rever se é útil */
+    /* color: ; */
 }
 
 .logo img {
@@ -85,8 +86,9 @@ nav a {
 }
 
 nav a:hover {
-    color: #3498db;
+    color: orangered;
     background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
 }
 
 main.fill-screen {
@@ -142,11 +144,11 @@ main.fill-screen .page-content {
 }
 
 .carousel-item:nth-child(1) {
-    background-image: url('../images/c.jpeg');
+    background-image: url('../images/fotos/original_reduzida_Foto_carousel.jpg');
 }
 
 .carousel-item:nth-child(2) {
-    background-image: url('../images/d.jpeg');
+    background-image: url('../images/logos/logo_instagram_2.jpg');
 }
 
 .carousel-item:nth-child(3) {
@@ -244,7 +246,7 @@ main.fill-screen .page-content {
 
 /* Footer */
 footer {
-    background-color: #2c3e50;
+    background-color: var(--primary-color);
     color: white;
     text-align: center;
     padding: 2rem;

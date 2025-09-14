@@ -1,9 +1,9 @@
 :root {
-  --primary-color: #2c3e50;
-  --secondary-color: #3498db;
-  --background-color: #f8f9fa;
-  --text-color: #333;
-  --accent-color: #e74c3c;
+  --primary-color: #213943;      /* Azul-petróleo escuro */
+  --nav-hover-color: #a3b6c0;    /* Azul suave e claro para hover da navegação */
+  --background-color: #f8f9fa;   /* Fundo claro para boa legibilidade */
+  --text-color: #333;            /* Texto escuro padrão */
+  --accent-color: #2ecc71;       /* Verde vibrante para destaque positivo */
   --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 

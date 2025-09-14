@@ -86,7 +86,7 @@ class Router {
     updateActiveLink(activePage) {
         document.querySelectorAll('nav a').forEach(link => {
             if (link.getAttribute('data-page') === activePage) {
-                link.style.color = '#3498db';
+                link.style.color = '#a3b6c0';
             } else {
                 link.style.color = 'white';
             }
