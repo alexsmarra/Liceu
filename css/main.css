@@ -106,10 +106,9 @@ main.fill-screen .page-content {
     min-height: 60vh;
 }
 
-/* Carrossel - ALTURA AUMENTADA EM 1/4 E LARGURA REDUZIDA EM 1/4 */
 .carousel-container {
-    height: 750px;
-    max-width: 750px;
+    height: 600px; /* Reduzido de 750px */
+    max-width: 600px; /* Reduzido de 750px */
     margin: 3rem auto;
     position: relative;
     overflow: hidden;
@@ -334,8 +333,8 @@ footer {
 /* Ajuste para telas muito grandes */
 @media (min-width: 1600px) {
     .carousel-container {
-        height: 800px;
-        max-width: 800px;
+        height: 640px; /* Reduzido de 800px */
+        max-width: 640px; /* Reduzido de 800px */
     }
     
     .header-container {
