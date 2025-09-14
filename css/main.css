@@ -86,7 +86,7 @@ nav a {
 }
 
 nav a:hover {
-    color: orangered;
+    /* color: #; */
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
 }
@@ -144,7 +144,7 @@ main.fill-screen .page-content {
 }
 
 .carousel-item:nth-child(1) {
-    background-image: url('../images/fotos/original_reduzida_Foto_carousel.jpg');
+    background-image: url('../images/teste.jpeg');
 }
 
 .carousel-item:nth-child(2) {
@@ -280,7 +280,7 @@ footer {
     }
     
     .carousel-container {
-        height: 500px; /* Altura reduzida para mobile */
+        height: 500px;
         max-width: 90%; /* Largura aumentada para mobile */
         border-radius: 8px; /* Bordas menos arredondadas */
     }
@@ -294,14 +294,14 @@ footer {
 
 @media (max-width: 600px) {
     .carousel-container {
-        height: 400px; /* Altura ainda menor para celulares */
+        height: 400px;
         max-width: 95%; /* Quase toda a largura da tela */
     }
 }
 
 @media (max-width: 480px) {
     .carousel-container {
-        height: 350px; /* Altura reduzida para celulares pequenos */
+        height: 350px;
         margin: 1.5rem auto;
     }
     
