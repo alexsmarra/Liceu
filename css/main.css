@@ -14,7 +14,6 @@
 
 body {
     background-color: var(--background-color);
-    color: #333;
     line-height: 1.6;
     min-height: 100vh;
     display: flex;
@@ -27,6 +26,10 @@ h1, h2, h3, h4, h5, h6 {
 
 p, li {
   color: var(--text-color);
+}
+
+footer p {
+    color: white
 }
 
 a {

@@ -1,9 +1,10 @@
 :root {
   --primary-color: #213943;      /* Azul-petróleo escuro */
-  --background-color: #1e2426;   /* Fundo escuro grafite */
+  --second-color: #1e2426;
+  --background-color: #fafafa;  
   --nav-hover-color: #a3b6c0;
-  --heading-color: #ffffff;      /* títulos (h1, h2, h3...) */
-  --text-color: #f2f2f2;         /* parágrafos, textos normais */         
+  --heading-color: #213943;      /* títulos (h1, h2, h3...) */
+  --text-color: #333333;         /* parágrafos, textos normais */         
   --accent-color: #c8ac7a;       /* links e destaques */  
   --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
