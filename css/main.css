@@ -35,7 +35,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
 }
@@ -107,8 +107,8 @@ main.fill-screen .page-content {
 }
 
 .carousel-container {
-    height: 600px; /* Reduzido de 750px */
-    max-width: 600px; /* Reduzido de 750px */
+    height: 640px; 
+    max-width: 740px; 
     margin: 3rem auto;
     position: relative;
     overflow: hidden;
@@ -252,7 +252,17 @@ footer {
     margin-top: auto;
 }
 
-/* RESPONSIVIDADE - Menu para mobile */
+@media (max-width: 1600px) {
+    .header-container {
+        max-width: 1200px;
+    }
+
+    .carousel-container {
+        height: 600px; 
+        max-width: 600px;  
+    }
+}
+
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
@@ -327,17 +337,5 @@ footer {
     nav a {
         padding: 0.3rem 0.5rem;
         font-size: 0.8rem;
-    }
-}
-
-/* Ajuste para telas muito grandes */
-@media (min-width: 1600px) {
-    .carousel-container {
-        height: 640px; /* Reduzido de 800px */
-        max-width: 640px; /* Reduzido de 800px */
-    }
-    
-    .header-container {
-        max-width: 1400px;
     }
 }
