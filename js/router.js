@@ -139,7 +139,7 @@ class Router {
         this.carouselInterval = setInterval(function () {
             currentIndex = (currentIndex + 1) % totalItems;
             showItem(currentIndex);
-        }, 5000);
+        }, 6000);
 
         // Inicia o carrossel mostrando o primeiro item
         showItem(currentIndex);
