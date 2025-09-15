@@ -1,9 +1,11 @@
 :root {
   --primary-color: #213943;      /* Azul-petróleo escuro */
-  --nav-hover-color: #a3b6c0;    /* Azul suave e claro para hover da navegação */
-  --background-color: #f8f9fa;   /* Fundo claro para boa legibilidade */
-  --text-color: #333;            /* Texto escuro padrão */
-  --accent-color: #2ecc71;       /* Verde vibrante para destaque positivo */
+  --background-color: #1e2426;   /* Fundo escuro grafite */
+  --nav-hover-color: #a3b6c0;
+  --heading-color: #ffffff;      /* títulos (h1, h2, h3...) */
+  --text-color: #f2f2f2;         /* parágrafos, textos normais */         
+  --accent-color: #c8ac7a;       /* links e destaques */  
   --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 

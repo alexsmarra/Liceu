@@ -1,0 +1,153 @@
+/* Carrossel */
+.carousel-container {
+    height: 640px; 
+    max-width: 740px; 
+    margin: 3rem auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.2s ease-in-out, visibility 1.2s ease-in-out;
+}
+
+.carousel-item.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.carousel-item:nth-child(1) {
+    background-image: url('../images/fotos/thales.jpeg');
+}
+
+.carousel-item:nth-child(2) {
+    background-image: url('../images/logos/logo-main.jpg');
+}
+
+.carousel-item:nth-child(3) {
+    background-image: url('../images/fotos/beth.jpg');
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-btn {
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin: 0 1rem;
+    transition: background 0.3s;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.indicator.active {
+    background: rgba(255, 255, 255, 1);
+}
+
+/* Responsividade do Carrossel */
+@media (max-width: 1600px) {
+    .carousel-container {
+        height: 600px; 
+        max-width: 600px;  
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-container {
+        height: 500px;
+        max-width: 90%;
+        border-radius: 8px;
+    }
+    
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .carousel-container {
+        height: 400px;
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-container {
+        height: 350px;
+        margin: 1.5rem auto;
+    }
+    
+    .carousel-indicators {
+        bottom: 15px;
+    }
+    
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .carousel-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+        margin: 0 0.5rem;
+    }
+
+     nav ul {
+        gap: 0.5rem;
+    }
+    
+    nav a {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.8rem;
+    }
+}
