@@ -143,15 +143,15 @@ main.fill-screen .page-content {
 }
 
 .carousel-item:nth-child(1) {
-    background-image: url('../images/teste.jpeg');
+    background-image: url('../images/fotos/thales.jpeg');
 }
 
 .carousel-item:nth-child(2) {
-    background-image: url('../images/logos/logo_instagram_2.jpg');
+    background-image: url('../images/logos/logo-main.jpg');
 }
 
 .carousel-item:nth-child(3) {
-    background-image: url('../images/f.jpg');
+    background-image: url('../images/fotos/beth.jpg');
 }
 
 /* O restante do código do carrossel não precisa ser alterado */
