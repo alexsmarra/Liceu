@@ -9,35 +9,35 @@ export class Router {
     }
 
     init() {
-    this.addRoute('home', null);
-    this.addRoute('sobre', 'pages/sobre.html');
-    this.addRoute('horarios', 'pages/horarios.html');
-    this.addRoute('aulas-online', 'pages/aulas-online.html');
-    this.addRoute('contato', 'pages/contato.html');
+        this.addRoute('home', null);
+        this.addRoute('sobre', 'pages/sobre.html');
+        this.addRoute('horarios', 'pages/horarios.html');
+        this.addRoute('aulas-online', 'pages/aulas-online.html');
+        this.addRoute('contato', 'pages/contato.html');
 
-    window.addEventListener('hashchange', () => this.loadRoute());
-    window.addEventListener('load', () => this.loadRoute());
+        window.addEventListener('hashchange', () => this.loadRoute());
+        window.addEventListener('load', () => this.loadRoute());
 
-    // ✅ Captura os links do menu desktop
-    document.querySelectorAll('#nav-links a').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const page = link.getAttribute('data-page');
-            if (page) {
-                window.location.hash = page;
-            }
+        // ✅ Captura os links do menu desktop
+        document.querySelectorAll('#nav-links a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const page = link.getAttribute('data-page');
+                if (page) {
+                    window.location.hash = page;
+                }
+            });
         });
-    });
 
-    // Captura o clique na logo
-    const logoLink = document.querySelector('.logo a');
-    if (logoLink) {
-        logoLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.location.hash = 'home';
-        });
+        // Captura o clique na logo
+        const logoLink = document.querySelector('.logo a');
+        if (logoLink) {
+            logoLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.hash = 'home';
+            });
+        }
     }
-}
 
 
     addRoute(path, template) {
@@ -49,17 +49,9 @@ export class Router {
         const template = this.routes[path];
         const main = document.querySelector('main');
 
-        if (path === 'home') {
-            main.classList.remove('fill-screen');
-            if (template === null) {
-                document.getElementById('content').innerHTML = this.homeContent;
-                initCarousel(); // ✅ chama o carrossel aqui
-                this.updateActiveLink('home');
-                return;
-            }
-        } else {
-            main.classList.add('fill-screen');
-        }
+        // Adiciona ou remove a classe fill-screen conforme a rota
+        if (path === 'home') main.classList.remove('fill-screen');
+        else main.classList.add('fill-screen');
 
         if (template) {
             try {
@@ -67,18 +59,25 @@ export class Router {
                 if (!response.ok) throw new Error('Página não encontrada');
                 const content = await response.text();
                 document.getElementById('content').innerHTML = content;
-
-                this.updateActiveLink(path);
             } catch (error) {
-                document.getElementById('content').innerHTML = `
-                    <div class="page-content">
-                        <h2>Página não encontrada</h2>
-                        <p>A página que você está procurando não existe.</p>
-                        <p><a href="#home">Voltar para a página inicial</a></p>
-                    </div>
-                `;
+                document.getElementById('content').innerHTML = `<div class="page-content">
+                <h2>Página não encontrada</h2>
+                <p>A página que você está procurando não existe.</p>
+                <p><a href="#home">Voltar para a página inicial</a></p>
+            </div>`;
                 console.error('Erro ao carregar a página:', error);
             }
+        } else {
+            document.getElementById('content').innerHTML = this.homeContent;
+        }
+
+        // Atualiza a navegação e fecha o menu mobile
+        this.updateActiveLink(path);
+        this.closeMobileMenu();
+
+        // ✅ Inicializa o carrossel **somente se estivermos na home**
+        if (path === 'home') {
+            initCarousel();
         }
     }
 
@@ -88,6 +87,15 @@ export class Router {
                 ? '#a3b6c0'
                 : 'white';
         });
+    }
+
+    closeMobileMenu() {
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenu && menuToggle) {
+            mobileMenu.style.display = 'none';
+            menuToggle.setAttribute('aria-expanded', 'false');
+        }
     }
 }
 

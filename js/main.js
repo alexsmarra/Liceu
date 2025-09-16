@@ -36,10 +36,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     const href = link.getAttribute('href');
                     if (href) window.location.href = href;
                 }
-                mobileMenu.style.display = 'none';
-                menuToggle.setAttribute('aria-expanded', 'false');
+                // ❌ remove o fechamento aqui
             });
         });
+
     }
 
     // inicializar o Router
