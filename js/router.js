@@ -1,4 +1,6 @@
-class Router {
+import { initCarousel } from "./carousel.js";
+
+export class Router {
     constructor() {
         this.routes = {};
         this.currentUrl = '';
@@ -7,35 +9,36 @@ class Router {
     }
 
     init() {
-        // Definir rotas
-        this.addRoute('home', null);
-        this.addRoute('sobre', 'pages/sobre.html');
-        this.addRoute('horarios', 'pages/horarios.html');
-        this.addRoute('aulas-online', 'pages/aulas-online.html');
-        this.addRoute('contato', 'pages/contato.html');
+    this.addRoute('home', null);
+    this.addRoute('sobre', 'pages/sobre.html');
+    this.addRoute('horarios', 'pages/horarios.html');
+    this.addRoute('aulas-online', 'pages/aulas-online.html');
+    this.addRoute('contato', 'pages/contato.html');
 
-        // Configurar event listeners
-        window.addEventListener('hashchange', () => this.loadRoute());
-        window.addEventListener('load', () => this.loadRoute());
+    window.addEventListener('hashchange', () => this.loadRoute());
+    window.addEventListener('load', () => this.loadRoute());
 
-        // Prevenir comportamento padrão dos links
-        document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const page = link.getAttribute('data-page');
+    // ✅ Captura os links do menu desktop
+    document.querySelectorAll('#nav-links a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const page = link.getAttribute('data-page');
+            if (page) {
                 window.location.hash = page;
-            });
+            }
         });
+    });
 
-        // Prevenir comportamento padrão do link da logo
-        const logoLink = document.querySelector('.logo a');
-        if (logoLink) {
-            logoLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                window.location.hash = 'home';
-            });
-        }
+    // Captura o clique na logo
+    const logoLink = document.querySelector('.logo a');
+    if (logoLink) {
+        logoLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.hash = 'home';
+        });
     }
+}
+
 
     addRoute(path, template) {
         this.routes[path] = template;
@@ -46,12 +49,11 @@ class Router {
         const template = this.routes[path];
         const main = document.querySelector('main');
 
-        // Adiciona ou remove a classe fill-screen conforme a rota
         if (path === 'home') {
             main.classList.remove('fill-screen');
             if (template === null) {
                 document.getElementById('content').innerHTML = this.homeContent;
-                this.initCarousel();
+                initCarousel(); // ✅ chama o carrossel aqui
                 this.updateActiveLink('home');
                 return;
             }
@@ -62,13 +64,10 @@ class Router {
         if (template) {
             try {
                 const response = await fetch(template);
-                if (!response.ok) {
-                    throw new Error('Página não encontrada');
-                }
+                if (!response.ok) throw new Error('Página não encontrada');
                 const content = await response.text();
                 document.getElementById('content').innerHTML = content;
 
-                // Atualizar navegação
                 this.updateActiveLink(path);
             } catch (error) {
                 document.getElementById('content').innerHTML = `
@@ -85,66 +84,11 @@ class Router {
 
     updateActiveLink(activePage) {
         document.querySelectorAll('nav a').forEach(link => {
-            if (link.getAttribute('data-page') === activePage) {
-                link.style.color = '#a3b6c0';
-            } else {
-                link.style.color = 'white';
-            }
+            link.style.color = (link.getAttribute('data-page') === activePage)
+                ? '#a3b6c0'
+                : 'white';
         });
-    }
-
-    // ...existing code...
-    initCarousel() {
-        const items = document.querySelectorAll('.carousel-item');
-        const prevBtn = document.querySelector('.prev-btn');
-        const nextBtn = document.querySelector('.next-btn');
-        const indicators = document.querySelectorAll('.indicator');
-
-        let currentIndex = 0;
-        const totalItems = items.length;
-
-        function showItem(index) {
-            items.forEach((item, i) => {
-                // AQUI ESTÁ A ALTERAÇÃO PRINCIPAL
-                item.classList.toggle('active', i === index);
-            });
-            indicators.forEach((indicator, i) => {
-                indicator.classList.toggle('active', i === index);
-            });
-        }
-
-        if (prevBtn) {
-            prevBtn.addEventListener('click', function () {
-                currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-                showItem(currentIndex);
-            });
-        }
-
-        if (nextBtn) {
-            nextBtn.addEventListener('click', function () {
-                currentIndex = (currentIndex + 1) % totalItems;
-                showItem(currentIndex);
-            });
-        }
-
-        indicators.forEach((indicator, i) => {
-            indicator.addEventListener('click', function () {
-                currentIndex = i;
-                showItem(currentIndex);
-            });
-        });
-
-        // Auto-avanço do carrossel a cada 5 segundos
-        if (this.carouselInterval) clearInterval(this.carouselInterval);
-        this.carouselInterval = setInterval(function () {
-            currentIndex = (currentIndex + 1) % totalItems;
-            showItem(currentIndex);
-        }, 6000);
-
-        // Inicia o carrossel mostrando o primeiro item
-        showItem(currentIndex);
     }
 }
 
-// Inicializar o router
-const router = new Router();
+
