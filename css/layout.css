@@ -13,22 +13,29 @@ main.fill-screen .page-content {
     min-height: 60vh;
 }
 
-/* Conteúdo */
+/* ---- conteúdo alinhado à largura do carrossel ---- */
 .content {
-    max-width: 1000px;
-    margin: 3rem auto;
+    /* largura base do carrossel em desktop */
+    max-width: 830px;
+    margin: 3rem auto 1rem;
     padding: 0 2rem;
     text-align: center;
+    box-sizing: border-box; /* garante que padding não aumente a largura total */
 }
 
 .content h1 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0rem;
     font-size: 2rem;
 }
 
 .content p {
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
+    text-align: justify;
+    text-justify: inter-word;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 /* Páginas de conteúdo */

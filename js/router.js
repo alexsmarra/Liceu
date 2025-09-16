@@ -144,7 +144,6 @@ class Router {
         // Inicia o carrossel mostrando o primeiro item
         showItem(currentIndex);
     }
-    // ...existing code...
 }
 
 // Inicializar o router

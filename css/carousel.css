@@ -1,8 +1,8 @@
 /* Carrossel */
 .carousel-container {
-    height: 670px; 
-    max-width: 830px; 
-    margin: 3rem auto;
+    height: 670px;
+    max-width: 830px;
+    margin: 0rem auto;
     position: relative;
     overflow: hidden;
     border-radius: 10px;
@@ -15,11 +15,11 @@
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    
+
     position: absolute;
     top: 0;
     left: 0;
-    
+
     opacity: 0;
     visibility: hidden;
     transition: opacity 1.2s ease-in-out, visibility 1.2s ease-in-out;
@@ -94,8 +94,12 @@
 /* Responsividade do Carrossel */
 @media (max-width: 1600px) {
     .carousel-container {
-        height: 600px; 
-        max-width: 600px;  
+        height: 600px;
+        max-width: 600px;
+    }
+
+    .content {
+        max-width: 600px;
     }
 }
 
@@ -103,9 +107,18 @@
     .carousel-container {
         height: 500px;
         max-width: 90%;
+        margin: 0rem auto 0rem;
         border-radius: 8px;
     }
-    
+
+    .content {
+        max-width: 90%;
+    }
+
+    .content p {
+        font-size: 1rem;
+    }
+
     .carousel-btn {
         width: 35px;
         height: 35px;
@@ -114,6 +127,10 @@
 }
 
 @media (max-width: 600px) {
+    .content {
+        max-width: 95%;
+    }
+
     .carousel-container {
         height: 400px;
         max-width: 95%;
@@ -123,18 +140,17 @@
 @media (max-width: 480px) {
     .carousel-container {
         height: 350px;
-        margin: 1.5rem auto;
     }
-    
+
     .carousel-indicators {
         bottom: 15px;
     }
-    
+
     .indicator {
         width: 10px;
         height: 10px;
     }
-    
+
     .carousel-btn {
         width: 30px;
         height: 30px;
@@ -142,10 +158,10 @@
         margin: 0 0.5rem;
     }
 
-     nav ul {
+    nav ul {
         gap: 0.5rem;
     }
-    
+
     nav a {
         padding: 0.3rem 0.5rem;
         font-size: 0.8rem;
