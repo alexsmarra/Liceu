@@ -18,6 +18,13 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    opacity: 1;
+    transition: opacity 0.3s ease; /* efeito suave */
+}
+
+body.fade-out {
+  opacity: 0;
+  background-color: var(--primary-color);
 }
 
 h1, h2, h3, h4, h5, h6 {

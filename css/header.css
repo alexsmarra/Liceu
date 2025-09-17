@@ -31,7 +31,7 @@ nav ul {
 }
 
 nav a {
-    color: white;
+    color: var(--button-menu-color);
     text-decoration: none;
     font-weight: 500;
     transition: background-color 0.3s;
@@ -41,6 +41,13 @@ nav a {
 
 nav a:hover {
     background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Item de menu ativo */
+nav a.active,
+#mobile-menu ul li a.active {
+    color: var(--nav-hover-color);         /* cor de contraste */
+    border-radius: 5px;
 }
 
 /* Ícone de menu mobile */

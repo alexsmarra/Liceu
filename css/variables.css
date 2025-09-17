@@ -1,9 +1,9 @@
 :root {
   --primary-color: #213943;      /* Azul-petróleo escuro */
   --second-color: #1e2426;
-  --background-color: #fafafa;  
+  --background-color: #eeeae2;  
   --nav-hover-color: #a3b6c0;
-  --button-menu-color: #fafafa;
+  --button-menu-color: #eeeae2;
   --heading-color: #213943;      /* títulos (h1, h2, h3...) */
   --text-color: #333333;         /* parágrafos, textos normais */         
   --accent-color: #c8ac7a;       /* links e destaques */  

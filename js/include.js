@@ -34,8 +34,30 @@ function initHeaderMenu() {
     menuToggle.addEventListener('click', () => mobileMenu.style.display = 'flex');
     closeMenu.addEventListener('click', () => mobileMenu.style.display = 'none');
 
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => mobileMenu.style.display = 'none');
+    // Links do menu (desktop e mobile) com efeito fade
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', e => {
+        const href = link.getAttribute('href');
+
+        // ignora links com #
+        if (!href || href.startsWith('#')) return;
+
+        e.preventDefault(); // previne o reload imediato
+        document.body.classList.add('fade-out'); // aplica fade
+        setTimeout(() => {
+          window.location.href = href; // navega após fade
+        }, 300); // tempo do fade em ms (igual ao CSS)
+      });
     });
   }
+
+  // 🔹 Marca o link ativo no menu (desktop e mobile)
+  const currentPath = window.location.pathname;
+  document.querySelectorAll('nav a').forEach(link => {
+    if (link.getAttribute('href') === currentPath) {
+      link.classList.add('active');
+    }
+  });
 }
+
+
