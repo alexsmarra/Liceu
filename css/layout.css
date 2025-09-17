@@ -38,6 +38,11 @@ main.fill-screen .page-content {
     box-sizing: border-box;
 }
 
+.content li {
+    margin-bottom: 0.5rem;
+    text-align: left;   
+}
+
 /* Páginas de conteúdo */
 .page-content {
     max-width: 1000px;
