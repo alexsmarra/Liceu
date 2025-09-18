@@ -30,16 +30,11 @@
     visibility: visible;
 }
 
-.carousel-item:nth-child(1) {
-    background-image: url('../images/fotos/thales.jpeg');
-}
-
-.carousel-item:nth-child(2) {
-    background-image: url('../images/logos/logo-main.jpg');
-}
-
-.carousel-item:nth-child(3) {
-    background-image: url('../images/fotos/beth.jpg');
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; 
 }
 
 .carousel-controls {
