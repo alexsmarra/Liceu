@@ -2,12 +2,12 @@ import { initCarousel } from "./carousel.js";
 
 async function loadPartials() {
   try {
-    // Sempre busca os partials a partir da raiz do site
-    const headerResponse = await fetch("/partials/header.html");
+    // Sempre busca os partials por caminho relativo 
+    const headerResponse = await fetch("partials/header.html");
     const headerHtml = await headerResponse.text();
     document.getElementById("site-header").innerHTML = headerHtml;
 
-    const footerResponse = await fetch("/partials/footer.html");
+    const footerResponse = await fetch("partials/footer.html");
     const footerHtml = await footerResponse.text();
     document.getElementById("site-footer").innerHTML = footerHtml;
 
