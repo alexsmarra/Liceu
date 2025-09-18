@@ -2,12 +2,16 @@ import { initCarousel } from "./carousel.js";
 
 async function loadPartials() {
   try {
-    // Sempre busca os partials por caminho relativo 
-    const headerResponse = await fetch("partials/header.html");
+    // 🔹 Ajuste dinâmico para o caminho da pasta partials
+    const currentPath = window.location.pathname;
+    const partialsBase = currentPath.includes("/pages/") ? "../" : "./";
+    
+    // Sempre busca os partials a partir da raiz do site
+    const headerResponse = await fetch(partialsBase + "partials/header.html");
     const headerHtml = await headerResponse.text();
     document.getElementById("site-header").innerHTML = headerHtml;
 
-    const footerResponse = await fetch("partials/footer.html");
+    const footerResponse = await fetch(partialsBase + "partials/footer.html");
     const footerHtml = await footerResponse.text();
     document.getElementById("site-footer").innerHTML = footerHtml;
 
