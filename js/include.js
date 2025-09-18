@@ -34,6 +34,9 @@ function initHeaderMenu() {
     menuToggle.addEventListener('click', () => mobileMenu.style.display = 'flex');
     closeMenu.addEventListener('click', () => mobileMenu.style.display = 'none');
 
+    // Verifica se a tela é mobile usando matchMedia
+    const isMobile = window.matchMedia("(max-width: 820px)").matches;
+
     // Links do menu (desktop e mobile) com efeito fade
     document.querySelectorAll('nav a').forEach(link => {
       link.addEventListener('click', e => {
@@ -42,11 +45,17 @@ function initHeaderMenu() {
         // ignora links com #
         if (!href || href.startsWith('#')) return;
 
-        e.preventDefault(); // previne o reload imediato
-        document.body.classList.add('fade-out'); // aplica fade
-        setTimeout(() => {
-          window.location.href = href; // navega após fade
-        }, 300); // tempo do fade em ms (igual ao CSS)
+        // Aplica o fade-out somente se for um dispositivo mobile
+        if (isMobile) {
+          e.preventDefault(); // previne o reload imediato
+          document.body.classList.add('fade-out'); // aplica fade
+          setTimeout(() => {
+            window.location.href = href; // navega após fade
+          }, 300); // tempo do fade em ms (igual ao CSS)
+        } else {
+          // Em desktop, a navegação segue o comportamento padrão
+          window.location.href = href;
+        }
       });
     });
   }
