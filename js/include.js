@@ -76,9 +76,13 @@ function initHeaderMenu() {
     });
   }
   
-  const currentPath = window.location.pathname;
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  
   document.querySelectorAll('nav a').forEach(link => {
-    if (link.getAttribute('href') === currentPath) {
+    const linkHref = link.getAttribute('href');
+    const linkPage = linkHref ? linkHref.split('/').pop() : '';
+    
+    if (linkPage === currentPage) {
       link.classList.add('active');
     }
   });
