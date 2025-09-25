@@ -13,13 +13,13 @@
 }
 
 body {
-    background-color: var(--background-color);
-    line-height: 1.6;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    opacity: 1;
-    transition: opacity 0.3s ease; /* efeito suave */
+  background-color: var(--background-color);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  transition: opacity 0.3s ease; /* efeito suave */
 }
 
 body.fade-out {

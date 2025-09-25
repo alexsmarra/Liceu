@@ -7,6 +7,7 @@
   --heading-color: #213943;      /* títulos (h1, h2, h3...) */
   --text-color: #333333;         /* parágrafos, textos normais */         
   --accent-color: #c8ac7a;       /* links e destaques */  
+  --box-shadow-logo: #D4AF37; /* não faz parte da paleta */           
   --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
