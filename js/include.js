@@ -34,7 +34,14 @@ function adjustPartialPaths() {
       const href = element.getAttribute('href');
       const src = element.getAttribute('src');
 
-      if (href && !href.startsWith('..')) {
+      // Só ajusta links internos (que não começa com http, https, mailto, #)
+      if (
+        href &&
+        !href.startsWith('..') &&
+        !href.startsWith('http') &&
+        !href.startsWith('mailto') &&
+        !href.startsWith('#')
+      ) {
         element.setAttribute('href', '../' + href);
       }
       if (src && !src.startsWith('..')) {

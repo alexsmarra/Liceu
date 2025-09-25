@@ -13,6 +13,31 @@ main.fill-screen .page-content {
     min-height: 60vh;
 }
 
+/* Páginas de conteúdo */
+.page-content {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.page-content .social-icons {
+    gap: 1rem;
+}
+
+.page-content .social-icons p {
+    margin-bottom: 0;
+}
+
+.page-content h2 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.page-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
 /* ---- conteúdo alinhado à largura do carrossel ---- */
 .content {
     /* largura base do carrossel em desktop */
@@ -43,21 +68,6 @@ main.fill-screen .page-content {
     text-align: left;   
 }
 
-/* Páginas de conteúdo */
-.page-content {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 0 2rem;
-}
 
-.page-content h2 {
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-.page-content p {
-    margin-bottom: 1.5rem;
-    line-height: 1.8;
-}
  
  

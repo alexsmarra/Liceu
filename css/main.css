@@ -27,12 +27,20 @@ body.fade-out {
   background-color: var(--primary-color);
 }
 
+main {
+  padding: 0 0 5rem 0;
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: var(--heading-color);
 }
 
 p, li {
   color: var(--text-color);
+}
+
+p a i {
+  font-size: 2rem;
 }
 
 footer p {
