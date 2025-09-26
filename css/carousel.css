@@ -13,6 +13,7 @@
 .carousel-item {
     min-width: 100%;
     height: 100%;
+    background-color: var(--primary-color);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -36,6 +37,10 @@
     height: 100%;
     object-fit: cover;
     display: block; 
+}
+
+.carousel-item img.special-img {
+    object-fit: scale-down;
 }
 
 .carousel-indicators {
@@ -75,7 +80,7 @@
 
 @media (max-width: 768px) {
     .carousel-container {
-        height: 500px;
+        height: 550px;
         max-width: 90%;
         margin: 0rem auto 0rem;
         border-radius: 8px;
@@ -102,14 +107,13 @@
     }
 
     .carousel-container {
-        height: 400px;
         max-width: 95%;
     }
 }
 
 @media (max-width: 480px) {
     .carousel-container {
-        height: 350px;
+        height: 400px;
     }
 
     .carousel-indicators {
