@@ -13,7 +13,6 @@
 .carousel-item {
     min-width: 100%;
     height: 100%;
-    background-color: var(--primary-color);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -37,10 +36,6 @@
     height: 100%;
     object-fit: cover;
     display: block; 
-}
-
-.carousel-item img.special-img {
-    object-fit: scale-down;
 }
 
 .carousel-indicators {
