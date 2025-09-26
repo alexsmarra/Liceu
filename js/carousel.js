@@ -33,19 +33,22 @@ export function initCarousel() {
         });
     });
 
-    // Swipe apenas no mobile
-    let startX = 0;
-    let startY = 0;
-    let isDragging = false;
     const carousel = document.querySelector('.carousel');
 
     // Impede o arraste padrão das imagens
     carousel.querySelectorAll('img').forEach(img => {
         img.addEventListener('dragstart', e => e.preventDefault());
-        // Clique na imagem avança para a próxima (apenas desktop)
         img.addEventListener('click', function (e) {
             if (!isMobile()) {
-                currentIndex = (currentIndex + 1) % totalItems;
+                const rect = img.getBoundingClientRect();
+                const clickX = e.clientX - rect.left;
+                if (clickX < rect.width / 2) {
+                    // Clique à esquerda: imagem anterior
+                    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+                } else {
+                    // Clique à direita: próxima imagem
+                    currentIndex = (currentIndex + 1) % totalItems;
+                }
                 showItem(currentIndex);
                 resetAutoAdvance();
             }
@@ -55,6 +58,11 @@ export function initCarousel() {
     function isMobile() {
         return window.matchMedia("(pointer: coarse)").matches;
     }
+
+    // Mobile swipe (mantém igual)
+    let startX = 0;
+    let startY = 0;
+    let isDragging = false;
 
     function onDragStart(e) {
         if (!isMobile()) return;
@@ -70,7 +78,6 @@ export function initCarousel() {
         const diffX = Math.abs(currentX - startX);
         const diffY = Math.abs(currentY - startY);
 
-        // Só previne o scroll se o movimento for mais horizontal que vertical
         if (diffX > diffY) {
             e.preventDefault();
         }
@@ -84,7 +91,6 @@ export function initCarousel() {
         const diffX = endX - startX;
         const diffY = endY - startY;
 
-        // Só troca se o movimento horizontal for maior que o vertical e suficiente
         if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
             if (diffX < 0) {
                 currentIndex = (currentIndex + 1) % totalItems;
@@ -94,11 +100,10 @@ export function initCarousel() {
             showItem(currentIndex);
             resetAutoAdvance();
         }
-        // Se o movimento for vertical, não faz nada (mantém scroll do body)
     }
 
     if (carousel) {
-        // Apenas mobile: swipe
+        // Mobile swipe
         carousel.addEventListener('touchstart', onDragStart, { passive: true });
         carousel.addEventListener('touchmove', onDragMove, { passive: false });
         carousel.addEventListener('touchend', onDragEnd);
