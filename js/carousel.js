@@ -35,6 +35,7 @@ export function initCarousel() {
 
     // Swipe apenas no mobile
     let startX = 0;
+    let startY = 0;
     let isDragging = false;
     const carousel = document.querySelector('.carousel');
 
@@ -59,22 +60,33 @@ export function initCarousel() {
         if (!isMobile()) return;
         isDragging = true;
         startX = e.touches[0].clientX;
-        document.body.style.overflow = 'hidden';
+        startY = e.touches[0].clientY;
     }
 
     function onDragMove(e) {
         if (!isMobile() || !isDragging) return;
-        e.preventDefault();
+        const currentX = e.touches[0].clientX;
+        const currentY = e.touches[0].clientY;
+        const diffX = Math.abs(currentX - startX);
+        const diffY = Math.abs(currentY - startY);
+
+        // Só previne o scroll se o movimento for mais horizontal que vertical
+        if (diffX > diffY) {
+            e.preventDefault();
+        }
     }
 
     function onDragEnd(e) {
         if (!isMobile() || !isDragging) return;
         isDragging = false;
-        document.body.style.overflow = '';
-        const endX = e.changedTouches ? e.changedTouches[0].clientX : e.clientX;
-        const diff = endX - startX;
-        if (Math.abs(diff) > 50) {
-            if (diff < 0) {
+        const endX = e.changedTouches[0].clientX;
+        const endY = e.changedTouches[0].clientY;
+        const diffX = endX - startX;
+        const diffY = endY - startY;
+
+        // Só troca se o movimento horizontal for maior que o vertical e suficiente
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+            if (diffX < 0) {
                 currentIndex = (currentIndex + 1) % totalItems;
             } else {
                 currentIndex = (currentIndex - 1 + totalItems) % totalItems;
@@ -82,11 +94,12 @@ export function initCarousel() {
             showItem(currentIndex);
             resetAutoAdvance();
         }
+        // Se o movimento for vertical, não faz nada (mantém scroll do body)
     }
 
     if (carousel) {
         // Apenas mobile: swipe
-        carousel.addEventListener('touchstart', onDragStart, { passive: false });
+        carousel.addEventListener('touchstart', onDragStart, { passive: true });
         carousel.addEventListener('touchmove', onDragMove, { passive: false });
         carousel.addEventListener('touchend', onDragEnd);
     }

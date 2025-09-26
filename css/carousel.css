@@ -82,7 +82,7 @@
     .carousel-container {
         height: 550px;
         max-width: 90%;
-        margin: 0rem auto 0rem;
+        margin: 0rem 1rem;
         border-radius: 8px;
     }
 
