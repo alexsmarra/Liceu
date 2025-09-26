@@ -5,7 +5,7 @@
   --nav-hover-color: #a3b6c0;
   --button-menu-color: #eeeae2;
   --heading-color: #213943;      /* títulos (h1, h2, h3...) */
-  --header-bottom-border: #21394326;  /* borda inferior do header */
+  --header-border: #21394326;  /* borda inferior do header */
   --text-color: #333333;         /* parágrafos, textos normais */         
   --accent-color: #c8ac7a;       /* links e destaques */       
   --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
