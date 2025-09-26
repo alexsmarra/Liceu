@@ -30,7 +30,7 @@
 }
 
 .footer-logo {
-    max-width: 320px;
+    max-width: 300px;
     height: auto;
 }
 
@@ -96,12 +96,21 @@
         padding-bottom: 6rem;
         padding-top: 1rem;
     }
-    .footer-column {
-        /* min-width: 0; */
+
+    .footer-logo {
+        max-width: 220px;
+        height: auto;
     }
+
+    .contact-column {
+        padding-left: 0rem;
+    }
+}
+
+@media (max-width: 768px) {
     .footer-bottom {
-        /* flex-direction: column; */
-        /* gap: 0.5rem; */
-        /* text-align: center; */
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
     }
 }
