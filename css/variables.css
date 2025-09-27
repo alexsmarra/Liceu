@@ -7,10 +7,10 @@
   --heading-color: #213943;      /* títulos (h1, h2, h3...) */
   --header-border: #21394326;  /* borda inferior do header */
   --text-color: #333333;
-  --footer-text-color: #a3b6c0;  
-  --footer-icon-color: #eeeae2;
-  --accent-color: #c8ac7a;       /* antiga */       
+  --footer-text-color: #eeeae2;  
+  /* --footer-icon-color: #eeeae2;    */
   --accent-color: #CFB68C;       /* links e destaques */       
+  --transparent-golden: #CFB68C75;
   --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
