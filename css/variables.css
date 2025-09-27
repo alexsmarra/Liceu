@@ -6,8 +6,11 @@
   --button-menu-color: #eeeae2;
   --heading-color: #213943;      /* títulos (h1, h2, h3...) */
   --header-border: #21394326;  /* borda inferior do header */
-  --text-color: #333333;         /* parágrafos, textos normais */         
-  --accent-color: #c8ac7a;       /* links e destaques */       
+  --text-color: #333333;
+  --footer-text-color: #a3b6c0;  
+  --footer-icon-color: #eeeae2;
+  --accent-color: #c8ac7a;       /* antiga */       
+  --accent-color: #CFB68C;       /* links e destaques */       
   --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 

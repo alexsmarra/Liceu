@@ -43,7 +43,7 @@ main.fill-screen .page-content {
     /* largura base do carrossel em desktop */
     max-width: 830px;
     margin: 3rem auto 1rem;
-    padding: 0 2rem;
+    padding: 0 1rem;
     text-align: center;
     box-sizing: border-box; /* garante que padding não aumente a largura total */
 }
