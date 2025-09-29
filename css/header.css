@@ -74,7 +74,10 @@ nav a.active,
     align-items: center;
     justify-content: center;
     z-index: 2000;
-    padding-top: 4rem;
+}
+
+#mobile-menu .logo a img {
+    margin-bottom: 1rem;
 }
 
 #mobile-menu ul {
