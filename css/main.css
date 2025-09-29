@@ -48,9 +48,11 @@ a {
   text-decoration: none; /* opcional, depende do estilo */
 }
 
-a:hover {
-  color: var(--nav-hover-color); /* ou outro efeito desejado */
-}
+/* a:hover {
+  color: var(--accent-color);
+  text-decoration: underline; 
+  transition: color 0.3s ease;
+} */
 
 
 

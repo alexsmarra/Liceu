@@ -74,6 +74,12 @@
 .address-column a:hover .icon-svg {
     filter: brightness(1.3);
     transform: scale(1.15);
+    color: var(--nav-hover-color);
+    transition: filter 0.2s, transform 0.2s, color 0.2s;
+}
+
+a:hover{
+    color: var(--nav-hover-color); /* ou outro efeito desejado */
 }
 
 .footer-bottom {
