@@ -43,10 +43,6 @@ p a i {
   font-size: 2rem;
 }
 
-footer p {
-    color: white
-}
-
 a {
   color: var(--primary-color);
   text-decoration: none; /* opcional, depende do estilo */
@@ -55,6 +51,7 @@ a {
 a:hover {
   color: var(--nav-hover-color); /* ou outro efeito desejado */
 }
+
 
 
 

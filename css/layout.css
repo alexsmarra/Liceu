@@ -38,6 +38,15 @@ main.fill-screen .page-content {
     line-height: 1.8;
 }
 
+.icon-svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+    margin-right: 0.3em;
+    color: var(--footer-icon-color); /* Agora funciona para SVG inline! */
+    transition: filter 0.2s, transform 0.2s;
+}
+
 /* ---- conteúdo alinhado à largura do carrossel ---- */
 .content {
     /* largura base do carrossel em desktop */
