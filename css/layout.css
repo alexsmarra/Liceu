@@ -43,8 +43,9 @@ main.fill-screen .page-content {
     height: 1.5rem;
     vertical-align: middle;
     margin-right: 0.3em;
-    color: var(--footer-icon-color); /* Agora funciona para SVG inline! */
+    color: var(--text-color);
     transition: filter 0.2s, transform 0.2s;
+    cursor: pointer
 }
 
 /* ---- conteúdo alinhado à largura do carrossel ---- */

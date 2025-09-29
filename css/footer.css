@@ -62,13 +62,10 @@
     gap: 1.3rem;
 }
 
-/* .contact-column a i, */
-/* .address-column a i { */
-/* font-size: 1.3rem; */
-/* vertical-align: middle; */
-/* margin-right: 0.3rem; */
-/* color: var(--footer-text-color); */
-/* } */
+.footer-main .contact-column a .icon-svg,
+.footer-main .address-column a .icon-svg {
+    color: var(--footer-icon-color); 
+}
 
 .contact-column a:hover .icon-svg,
 .address-column a:hover .icon-svg {
@@ -147,8 +144,9 @@ a:hover{
         width: 300px;
     }
 
+    /* compensar o margin-bottom .5rem do texto de address-column */
     .footer-bottom {
-        /* padding: .5rem 9rem .5rem; */
+        margin-top: -.5rem;
     }
 }
 
