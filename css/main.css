@@ -6,10 +6,10 @@
 
 /* Reset e estilos base */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -19,7 +19,8 @@ body {
   display: flex;
   flex-direction: column;
   opacity: 1;
-  transition: opacity 0.3s ease; /* efeito suave */
+  transition: opacity 0.3s ease;
+  /* efeito suave */
 }
 
 body.fade-out {
@@ -31,11 +32,17 @@ main {
   padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--heading-color);
 }
 
-p, li {
+p,
+li {
   color: var(--text-color);
 }
 
@@ -45,7 +52,8 @@ p a i {
 
 a {
   color: var(--primary-color);
-  text-decoration: none; /* opcional, depende do estilo */
+  text-decoration: none;
+  /* opcional, depende do estilo */
 }
 
 .contato-card {
@@ -64,29 +72,47 @@ a {
 .contato-card h3::after {
   content: "";
   display: block;
-  height: 3px;
-  min-width: 40px; /* largura mínima opcional */
+  height: 2px;
+  min-width: 40px;
+  /* largura mínima opcional */
   max-width: 100%;
   background: var(--accent-color);
   border-radius: 2px;
-  margin: 0 auto 0 auto;
+  margin: -3px auto 0 auto;
+}
+
+.pages-section h2 {
+  position: relative;
+  padding-bottom: .5rem;
+  text-align: center;
+  width: fit-content;
+}
+
+.pages-section h2::after {
+  content: "";
+  display: block;
+  height: 2px;
+  /* largura mínima opcional */
+  min-width: 40px;
+  max-width: 100%;
+  background: var(--accent-color);
+  border-radius: 2px;
+  margin: -3px auto 0 auto;
 }
 
 .pages-section .contato-card a .icon-svg {
-    width: 2rem;
-    height: 2rem;
-    vertical-align: middle;
-    margin-right: 0.3em;
-    color: var(--text-color);
-    transition: filter 0.2s, transform 0.2s;
-    cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: middle;
+  margin-right: 0.3em;
+  color: var(--text-color);
+  transition: filter 0.2s, transform 0.2s;
+  cursor: pointer;
 }
 
 .pages-section .contato-card a:hover .icon-svg {
-    filter: brightness(1.3);
-    transform: scale(1.15);
-    transition: filter 0.2s, transform 0.2s, color 0.2s;
-    color: var(--icon-main-hover-color);
+  filter: brightness(1.3);
+  transform: scale(1.15);
+  transition: filter 0.2s, transform 0.2s, color 0.2s;
+  color: var(--icon-main-hover-color);
 }
-
-

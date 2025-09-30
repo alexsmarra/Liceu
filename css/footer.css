@@ -40,18 +40,6 @@
     /* height: auto; */
 }
 
-.contact-column h3::after,
-.address-column h3::after {
-    content: "";
-    display: block;
-    height: 1px;
-    min-width: 40px;
-    max-width: 100%;
-    background: var(--transparent-golden);
-    border-radius: 2px;
-    margin: 0 auto 0 auto;
-}
-
 .contact-column h3,
 .address-column h3 {
     margin-bottom: 0rem;
