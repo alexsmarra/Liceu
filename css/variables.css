@@ -2,8 +2,9 @@
   --primary-color: #213943;      /* Azul-petróleo escuro */
   --second-color: #1e2426;
   --background-color: #eeeae2;  
+  --nav-li-color: #eeeae2;  
   --nav-hover-color: #a3b6c0;
-  --button-menu-color: #eeeae2;
+  --button-menu-color: #a3b6c0;
   --heading-color: #213943;      /* títulos (h1, h2, h3...) */
   --header-border: #21394326;  /* borda inferior do header */
   --text-color: #333333;
