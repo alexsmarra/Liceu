@@ -7,9 +7,9 @@
   --heading-color: #213943;      /* títulos (h1, h2, h3...) */
   --header-border: #21394326;  /* borda inferior do header */
   --text-color: #333333;
+  --icon-main-hover-color: #000000;
   --footer-p-and-a-color: #eeeae2;  
   --footer-icon-color: #eeeae2;
-  /* --footer-icon-color: #eeeae2;    */
   --accent-color: #CFB68C;       /* links e destaques */       
   --transparent-golden: #CFB68C75;
   --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

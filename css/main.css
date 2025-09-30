@@ -48,5 +48,45 @@ a {
   text-decoration: none; /* opcional, depende do estilo */
 }
 
+.contato-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contato-card h3 {
+  position: relative;
+  padding-bottom: .5rem;
+  text-align: center;
+  width: fit-content;
+}
+
+.contato-card h3::after {
+  content: "";
+  display: block;
+  height: 3px;
+  min-width: 40px; /* largura mínima opcional */
+  max-width: 100%;
+  background: var(--accent-color);
+  border-radius: 2px;
+  margin: 0 auto 0 auto;
+}
+
+.pages-section .contato-card a .icon-svg {
+    width: 2rem;
+    height: 2rem;
+    vertical-align: middle;
+    margin-right: 0.3em;
+    color: var(--text-color);
+    transition: filter 0.2s, transform 0.2s;
+    cursor: pointer;
+}
+
+.pages-section .contato-card a:hover .icon-svg {
+    filter: brightness(1.3);
+    transform: scale(1.15);
+    transition: filter 0.2s, transform 0.2s, color 0.2s;
+    color: var(--icon-main-hover-color);
+}
 
 

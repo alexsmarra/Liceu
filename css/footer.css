@@ -59,24 +59,31 @@
 
 .contact-column .social-icons {
     display: flex;
-    gap: 1.3rem;
+    gap: .8rem;
 }
 
 .footer-main .contact-column a .icon-svg,
 .footer-main .address-column a .icon-svg {
-    color: var(--footer-icon-color); 
+    color: var(--footer-icon-color);
+    width: 1.8rem;
+    height: 1.8rem;
+    vertical-align: middle;
+    margin-right: 0.3em;
+    transition: filter 0.2s, transform 0.2s;
+    cursor: pointer;
 }
 
 .contact-column a:hover .icon-svg,
 .address-column a:hover .icon-svg {
     filter: brightness(1.3);
     transform: scale(1.15);
-    color: var(--nav-hover-color);
     transition: filter 0.2s, transform 0.2s, color 0.2s;
+    color: var(--nav-hover-color);
 }
 
-a:hover{
-    color: var(--nav-hover-color); /* ou outro efeito desejado */
+.contact-column a:hover,
+.address-column a:hover {
+    color: var(--nav-hover-color);
 }
 
 .footer-bottom {
@@ -87,7 +94,7 @@ a:hover{
     /* font-size: 0.95rem; */
     font-weight: bold;
     border-top: 1px solid #CFB68C10;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
 
     /* max-width: 1500px; */
     justify-content: space-between;
